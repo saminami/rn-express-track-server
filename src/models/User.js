@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// TODO fix unique
+
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
