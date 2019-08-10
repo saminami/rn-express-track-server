@@ -1,7 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
+
+app.use(bodyParser.json());
+app.use(authRoutes);
 
 const mongoUri =
     'mongodb+srv://admin:?@cluster0-t2e7t.azure.mongodb.net/test?retryWrites=true&w=majority';
@@ -24,6 +29,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log("listing on port 3k")
+    console.log("listening on port 3000")
 })
 
